@@ -28,6 +28,17 @@ function PVHS:Create()
 	loadingscrren.Position = UDim2.new(0.0168539323, 0, 0.104308389, 0)
 	loadingscrren.Size = UDim2.new(0, 344, 0, 389)
 
+	desc.Name = "desc"
+	desc.Parent = main
+	desc.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+	desc.BorderColor3 = Color3.fromRGB(189, 238, 255)
+	desc.Position = UDim2.new(0.0168539323, 0, 0.0453514755, 0)
+	desc.Size = UDim2.new(0, 334, 0, 20)
+	desc.Font = Enum.Font.SourceSans
+	desc.Text = "Im using PVHs"
+	desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+	desc.TextSize = 14.000
+	desc.TextXAlignment = Enum.TextXAlignment.Left
 
 
 	local PVHMain = {}
@@ -66,24 +77,14 @@ function PVHS:Create()
 		title.TextColor3 = Color3.fromRGB(255, 255, 255)
 		title.TextSize = 14.000
 		title.TextXAlignment = Enum.TextXAlignment.Left
-	
+
 		rconsolename(name)
 		rconsoleprint("Loaded "..name.."")
 
 	end	
 
 	function PVHMain:SetDesc(name)
-		desc.Name = "desc"
-		desc.Parent = main
-		desc.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-		desc.BorderColor3 = Color3.fromRGB(189, 238, 255)
-		desc.Position = UDim2.new(0.0168539323, 0, 0.0453514755, 0)
-		desc.Size = UDim2.new(0, 334, 0, 20)
-		desc.Font = Enum.Font.SourceSans
 		desc.Text = name
-		desc.TextColor3 = Color3.fromRGB(255, 255, 255)
-		desc.TextSize = 14.000
-		desc.TextXAlignment = Enum.TextXAlignment.Left
 	end
 
 	return  PVHMain

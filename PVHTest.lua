@@ -55,20 +55,15 @@ function PVHS:Create()
 	desc.TextXAlignment = Enum.TextXAlignment.Left
 
 	if title.Text == "" then
-		rconsolewarn("Error with the Main:Title please provide a text on title.Text")
+		rconsolename("PVHS")
+		rconsoleerr("Error with the Main:Title please provide a text on title.Text")
 		Derrle:Destroy()
 	elseif title.Text then
-
+		rconsoleprint("Loaded the UI. Waiting for the info")
+		wait(1)
+		rconsoleinfo("PVHS BETA, 0.1 BETA TEST")
 	end
 
-	function PVHS:Title(name)
-		title.Text = name
-
-	end	
-
-	function PVHS:SetDesc(name)
-		desc.Text = name
-	end
 
 	local PVHMain = {}
 
@@ -87,6 +82,16 @@ function PVHS:Create()
 		TextButton.TextSize = 14.000
 		TextButton.Text = name	
 
+	end
+
+	function PVHS:Title(name)
+		title.Text = name
+		rconsolename(name)
+
+	end	
+
+	function PVHS:SetDesc(name)
+		desc.Text = name
 	end
 
 	return  PVHMain

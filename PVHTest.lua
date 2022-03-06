@@ -11,7 +11,7 @@ function PVHS:Create()
 	local desc = Instance.new("TextLabel")
 	local title = Instance.new("TextLabel")
 	local Close = Instance.new("TextButton")
-
+	
 
 	TestUiLib.Name = "TestUiLib"
 	TestUiLib.Parent = game.CoreGui
@@ -51,7 +51,7 @@ function PVHS:Create()
 	desc.Position = UDim2.new(0.0168539323, 0, 0.0453514792, 0)
 	desc.Size = UDim2.new(0, 344, 0, 20)
 	desc.Font = Enum.Font.SourceSans
-	desc.Text = "Im using PVH"
+	desc.Text = " Im using PVH"
 	desc.TextColor3 = Color3.fromRGB(255, 255, 255)
 	desc.TextSize = 14.000
 	desc.TextXAlignment = Enum.TextXAlignment.Left
@@ -108,6 +108,62 @@ function PVHS:Create()
 		end)
 
 	end
+	
+	function PVHMain:NewToggle(text, callback)
+		local actions = {}
+		local enabled = false
+		
+		
+		text = text or "New Toggle"
+		callback = callback or function() end
+		
+
+
+		local ToggleBackround = Instance.new("Frame")
+		local TitleToggle = Instance.new("TextLabel")
+		local ToggleButton = Instance.new("TextButton")
+
+
+
+		ToggleBackround.Name = "ToggleBackround"
+		ToggleBackround.Parent = loadingscrren
+		ToggleBackround.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+		ToggleBackround.BorderSizePixel = 0
+		ToggleBackround.Position = UDim2.new(0, 0, 0.0668380484, 0)
+		ToggleBackround.Size = UDim2.new(0, 344, 0, 34)
+
+		TitleToggle.Name = "TitleToggle"
+		TitleToggle.Parent = ToggleBackround
+		TitleToggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TitleToggle.BackgroundTransparency = 1.000
+		TitleToggle.Size = UDim2.new(0, 235, 0, 34)
+		TitleToggle.Font = Enum.Font.SourceSans
+		TitleToggle.Text = text
+		TitleToggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+		TitleToggle.TextSize = 20.000
+		TitleToggle.TextWrapped = true
+
+		ToggleButton.Name = "ToggleButton"
+		ToggleButton.Parent = ToggleBackround
+		ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		ToggleButton.BorderSizePixel = 0
+		ToggleButton.Position = UDim2.new(0.683139563, 0, 0.205882356, 0)
+		ToggleButton.Size = UDim2.new(0, 101, 0, 20)
+		ToggleButton.Font = Enum.Font.SourceSans
+		ToggleButton.Text = "??"
+		ToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+		ToggleButton.TextSize = 14.000
+		ToggleButton.TextTransparency = 1.000
+
+		local function Fire()
+			enabled = not enabled
+			pcall(callback, enabled)
+			ToggleButton.BackgroundColor3 = enabled and Color3.fromRGB(255, 55, 37) or Color3.fromRGB(46, 255, 88)
+		end
+
+		ToggleButton.MouseButton1Click:Connect(Fire)
+		
+	end
 
 	function PVHMain:Title(name)
 		title.Text = name
@@ -118,17 +174,10 @@ function PVHS:Create()
 	end	
 
 	function PVHMain:SetDesc(name)
-		desc.Text = name
+		desc.Text = " "..name..""
 	end
 
 	return  PVHMain
 end
 
 return PVHS
-
-
-
-
-
-
-

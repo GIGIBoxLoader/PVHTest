@@ -8,7 +8,6 @@ function PVHS:Create()
 	local title = Instance.new("TextLabel")
 	local desc = Instance.new("TextLabel")
 	local loadingscrren = Instance.new("Frame")
-	local TextButton = Instance.new("TextButton")
 	local UIListLayout = Instance.new("UIListLayout")
 
 	Derrle.Name = "Derrle"
@@ -34,7 +33,7 @@ function PVHS:Create()
 	local PVHMain = {}
 
 	function PVHMain:NewButton(name, callback)
-
+		local TextButton = Instance.new("TextButton")
 		local callback = callback or function() end
 
 		TextButton.Parent = loadingscrren

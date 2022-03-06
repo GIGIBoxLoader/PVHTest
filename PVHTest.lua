@@ -29,10 +29,53 @@ function PVHS:Create()
 	loadingscrren.Position = UDim2.new(0.0168539323, 0, 0.104308389, 0)
 	loadingscrren.Size = UDim2.new(0, 344, 0, 389)
 
-	
+	title.Name = "title"
+	title.Parent = main
+	title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	title.BackgroundTransparency = 1.000
+	title.BorderColor3 = Color3.fromRGB(189, 238, 255)
+	title.Position = UDim2.new(0.0168539323, 0, 0, 0)
+	title.Size = UDim2.new(0, 194, 0, 20)
+	title.Font = Enum.Font.SourceSans
+	title.Text = ""
+	title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	title.TextSize = 14.000
+	title.TextXAlignment = Enum.TextXAlignment.Left
+
+	desc.Name = "desc"
+	desc.Parent = main
+	desc.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+	desc.BorderColor3 = Color3.fromRGB(189, 238, 255)
+	desc.Position = UDim2.new(0.0168539323, 0, 0.0453514755, 0)
+	desc.Size = UDim2.new(0, 334, 0, 20)
+	desc.Font = Enum.Font.SourceSans
+	desc.Text = ""
+	desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+	desc.TextSize = 14.000
+	desc.TextXAlignment = Enum.TextXAlignment.Left
+
+	if title.Text == "" then
+		rconsolewarn("Error with the Main:Title please provide a text on title.Text")
+		Derrle:Destroy()
+	elseif title.Text then
+
+	end
+
+	function PVHS:Title(name)
+		title.Text = name
+
+	end	
+
+	function PVHS:SetDesc(name)
+		desc.Text = name
+	end
+
 	local PVHMain = {}
-	
-	function PVHMain:NewButton(name)
+
+	function PVHMain:NewButton(name, callback)
+
+		local callback = callback or function() end
+
 		TextButton.Parent = loadingscrren
 		TextButton.BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 		TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -42,40 +85,15 @@ function PVHS:Create()
 		TextButton.Font = Enum.Font.SourceSans
 		TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton.TextSize = 14.000
-		TextButton.Text = name
+		TextButton.Text = name	
+
 	end
-	
-	function PVHMain:Title(name)
-		title.Name = "title"
-		title.Parent = main
-		title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		title.BackgroundTransparency = 1.000
-		title.BorderColor3 = Color3.fromRGB(189, 238, 255)
-		title.Position = UDim2.new(0.0168539323, 0, 0, 0)
-		title.Size = UDim2.new(0, 194, 0, 20)
-		title.Font = Enum.Font.SourceSans
-		title.Text = name
-		title.TextColor3 = Color3.fromRGB(255, 255, 255)
-		title.TextSize = 14.000
-		title.TextXAlignment = Enum.TextXAlignment.Left
-	end
-	
-	function PVHMain:SetDesc(name)
-		desc.Name = "desc"
-		desc.Parent = main
-		desc.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-		desc.BorderColor3 = Color3.fromRGB(189, 238, 255)
-		desc.Position = UDim2.new(0.0168539323, 0, 0.0453514755, 0)
-		desc.Size = UDim2.new(0, 334, 0, 20)
-		desc.Font = Enum.Font.SourceSans
-		desc.Text = name
-		desc.TextColor3 = Color3.fromRGB(255, 255, 255)
-		desc.TextSize = 14.000
-		desc.TextXAlignment = Enum.TextXAlignment.Left
-	end
-	
+
 	return  PVHMain
 end
 
 return PVHS
+
+
+
 

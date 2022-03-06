@@ -53,7 +53,7 @@ function PVHS:Create()
 
 	end
 
-	function PVHS:Title(name)
+	function PVH:Title(name)
 		title.Name = "title"
 		title.Parent = main
 		title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -72,7 +72,7 @@ function PVHS:Create()
 
 	end	
 
-	function PVHS:SetDesc(name)
+	function PVH:SetDesc(name)
 		desc.Name = "desc"
 		desc.Parent = main
 		desc.BackgroundColor3 = Color3.fromRGB(43, 43, 43)

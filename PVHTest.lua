@@ -30,6 +30,7 @@ function PVHS:Create()
 	loadingscrren.Size = UDim2.new(0, 344, 0, 389)
 
 
+
 	local PVHMain = {}
 
 	function PVHMain:NewButton(name, callback)
@@ -46,6 +47,10 @@ function PVHS:Create()
 		TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton.TextSize = 14.000
 		TextButton.Text = name	
+
+		TextButton.MouseButton1Down:Connect(function()
+			pcall(callback)
+		end)
 
 	end
 
